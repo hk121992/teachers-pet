@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Pet — AI-Powered Teaching Assistant</title>
+  <meta name="description" content="AI-powered teaching assistant for primary school teachers. Track student performance, log parent conversations, mark papers with AI, and generate reports.">
+  <meta property="og:title" content="Teacher's Pet — AI-Powered Teaching Assistant">
+  <meta property="og:description" content="Save hours every week with AI-powered paper marking, report generation, and student performance tracking.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Teacher's Pet
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#tech-stack">Tech Stack</a>
+        <a href="https://github.com/hk121992/teachers-pet" class="btn btn-sm" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Your AI Teaching Assistant</h1>
+        <p class="hero-subtitle">Save hours every week. Teacher's Pet uses AI to mark papers, generate reports, and track student progress &mdash; so you can focus on what matters most: teaching.</p>
+        <div class="hero-actions">
+          <a href="https://github.com/hk121992/teachers-pet#quick-start" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Get Started</a>
+          <a href="https://github.com/hk121992/teachers-pet" class="btn btn-outline btn-lg" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="app-mockup">
+          <div class="mockup-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-sidebar">
+              <div class="mockup-nav-item active"></div>
+              <div class="mockup-nav-item"></div>
+              <div class="mockup-nav-item"></div>
+              <div class="mockup-nav-item"></div>
+              <div class="mockup-nav-item"></div>
+            </div>
+            <div class="mockup-main">
+              <div class="mockup-card"></div>
+              <div class="mockup-card"></div>
+              <div class="mockup-card wide"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Everything a teacher needs</h2>
+      <p class="section-subtitle">Built by educators, for educators. Six powerful tools in one clean interface.</p>
+      <div class="features-grid">
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Student Performance Tracking</h3>
+          <p>Record assessments per subject, view trends and averages across your class with visual charts.</p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Parent Conversation Log</h3>
+          <p>Log phone, email, and in-person interactions. Track follow-ups and action items effortlessly.</p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+          </div>
+          <h3>AI Paper Marking</h3>
+          <p>Upload photos or PDFs of student work. Get AI-powered marking and detailed feedback via Claude Vision.</p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Report Generation</h3>
+          <p>AI-generated end-of-term reports and parent meeting prep notes at the click of a button.</p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Class Management</h3>
+          <p>Organise students by class and year group with a clean, intuitive interface.</p>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3>Smart Dashboard</h3>
+          <p>See upcoming follow-ups, unmarked papers, and recent activity at a glance.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-subtitle">Three simple steps to transform your workflow.</p>
+      <div class="steps">
+        <div class="step fade-in">
+          <div class="step-number">1</div>
+          <h3>Set up your classes</h3>
+          <p>Add your classrooms and students. Import existing data or start fresh.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step fade-in">
+          <div class="step-number">2</div>
+          <h3>Record everything</h3>
+          <p>Upload student work, log parent conversations, and enter assessment scores.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step fade-in">
+          <div class="step-number">3</div>
+          <h3>Let AI do the rest</h3>
+          <p>Get instant marking, generated reports, and performance insights powered by Claude.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-stack" id="tech-stack">
+    <div class="container">
+      <h2 class="section-title">Built with modern tools</h2>
+      <div class="tech-grid">
+        <div class="tech-item fade-in">
+          <strong>Python &amp; FastAPI</strong>
+          <span>Backend API</span>
+        </div>
+        <div class="tech-item fade-in">
+          <strong>React &amp; TypeScript</strong>
+          <span>Frontend UI</span>
+        </div>
+        <div class="tech-item fade-in">
+          <strong>Claude API</strong>
+          <span>AI Vision &amp; Text</span>
+        </div>
+        <div class="tech-item fade-in">
+          <strong>SQLite &amp; SQLAlchemy</strong>
+          <span>Data Storage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Built for teachers, powered by AI.</p>
+      <p><a href="https://github.com/hk121992/teachers-pet" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
