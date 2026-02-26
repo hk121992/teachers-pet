@@ -19,6 +19,6 @@ class Assessment(Base):
     grade: Mapped[Optional[str]] = mapped_column(String(10), default=None)
     date: Mapped[dt.date] = mapped_column(Date, default=dt.date.today)
     notes: Mapped[Optional[str]] = mapped_column(Text, default=None)
-    created_at: Mapped[dt.datetime] = mapped_column(default=dt.datetime.utcnow)
+    created_at: Mapped[dt.datetime] = mapped_column(default=lambda: dt.datetime.now(dt.timezone.utc))
 
     student: Mapped["Student"] = relationship(back_populates="assessments")  # noqa: F821

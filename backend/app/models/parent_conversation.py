@@ -26,6 +26,6 @@ class ParentConversation(Base):
     summary: Mapped[str] = mapped_column(Text)
     action_items: Mapped[Optional[str]] = mapped_column(Text, default=None)
     follow_up_date: Mapped[Optional[dt.date]] = mapped_column(Date, default=None)
-    created_at: Mapped[dt.datetime] = mapped_column(default=dt.datetime.utcnow)
+    created_at: Mapped[dt.datetime] = mapped_column(default=lambda: dt.datetime.now(dt.timezone.utc))
 
     student: Mapped["Student"] = relationship(back_populates="parent_conversations")  # noqa: F821

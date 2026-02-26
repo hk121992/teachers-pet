@@ -1,6 +1,6 @@
 from datetime import date
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.database import get_db
@@ -85,7 +85,7 @@ def get_student_summary(student_id: int, db: Session = Depends(get_db)):
 
     subject_averages = []
     for subject, records in subjects.items():
-        avg = sum(r.score / r.max_score * 100 for r in records) / len(records)
+        avg = sum(r.score / r.max_score * 100 for r in records if r.max_score > 0) / max(sum(1 for r in records if r.max_score > 0), 1)
         subject_averages.append(
             SubjectAverage(subject=subject, average_percentage=round(avg, 1), assessment_count=len(records))
         )

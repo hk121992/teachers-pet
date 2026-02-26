@@ -9,7 +9,7 @@ class AssessmentCreate(BaseModel):
     subject: str
     title: str
     score: float
-    max_score: float
+    max_score: float = Field(gt=0)
     grade: Optional[str] = None
     date: dt.date = Field(default_factory=dt.date.today)
     notes: Optional[str] = None

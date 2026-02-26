@@ -7,7 +7,7 @@ from fastapi import UploadFile
 
 from app.config import settings
 
-ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".pdf"}
+ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".pdf"}
 
 
 def get_upload_dir() -> Path:
@@ -18,6 +18,8 @@ def get_upload_dir() -> Path:
 
 async def save_upload(file: UploadFile) -> tuple[str, str]:
     """Save an uploaded file and return (saved_path, original_filename)."""
+    if not file.filename:
+        raise ValueError("No filename provided")
     ext = Path(file.filename).suffix.lower()
     if ext not in ALLOWED_EXTENSIONS:
         raise ValueError(f"File type {ext} not allowed. Allowed: {ALLOWED_EXTENSIONS}")
@@ -44,7 +46,6 @@ def file_to_base64(file_path: str) -> tuple[str, str]:
         ".jpeg": "image/jpeg",
         ".png": "image/png",
         ".gif": "image/gif",
-        ".bmp": "image/bmp",
         ".webp": "image/webp",
         ".pdf": "application/pdf",
     }

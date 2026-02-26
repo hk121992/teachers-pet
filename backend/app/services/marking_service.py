@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
@@ -67,7 +67,7 @@ def mark_paper(db: Session, paper: Paper) -> dict:
     paper.ai_feedback = response_text
     paper.score = result.get("score")
     paper.max_score = result.get("max_score")
-    paper.marked_at = datetime.utcnow()
+    paper.marked_at = datetime.now(timezone.utc)
     db.commit()
     db.refresh(paper)
 

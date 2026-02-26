@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from sqlalchemy import ForeignKey, String, Text
@@ -20,6 +20,6 @@ class Paper(Base):
     score: Mapped[Optional[float]] = mapped_column(default=None)
     max_score: Mapped[Optional[float]] = mapped_column(default=None)
     marked_at: Mapped[Optional[datetime]] = mapped_column(default=None)
-    created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(default=lambda: datetime.now(timezone.utc))
 
     student: Mapped["Student"] = relationship(back_populates="papers")  # noqa: F821

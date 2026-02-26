@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -13,6 +13,6 @@ class Classroom(Base):
     name: Mapped[str] = mapped_column(String(100))
     year_group: Mapped[str] = mapped_column(String(20))
     academic_year: Mapped[str] = mapped_column(String(9))  # e.g. "2025-2026"
-    created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(default=lambda: datetime.now(timezone.utc))
 
     students: Mapped[list["Student"]] = relationship(back_populates="classroom")  # noqa: F821

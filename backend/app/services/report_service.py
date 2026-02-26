@@ -38,10 +38,11 @@ def _gather_student_data(db: Session, student: Student) -> str:
         subjects.setdefault(a.subject, []).append(a)
 
     for subject, records in subjects.items():
-        avg = sum(r.score / r.max_score * 100 for r in records) / len(records)
+        valid = [r for r in records if r.max_score > 0]
+        avg = sum(r.score / r.max_score * 100 for r in valid) / len(valid) if valid else 0
         lines.append(f"\n{subject} (avg: {avg:.0f}%):")
         for r in records[:5]:  # last 5 per subject
-            pct = r.score / r.max_score * 100
+            pct = r.score / r.max_score * 100 if r.max_score > 0 else 0
             lines.append(f"  - {r.title} ({r.date}): {r.score}/{r.max_score} ({pct:.0f}%)")
 
     lines.append(f"\n--- Parent Conversations ({len(conversations)} records) ---")
@@ -116,7 +117,8 @@ def generate_class_overview(db: Session, classroom_id: int) -> str:
             .all()
         )
         if assessments:
-            avg = sum(a.score / a.max_score * 100 for a in assessments) / len(assessments)
+            valid = [a for a in assessments if a.max_score > 0]
+            avg = sum(a.score / a.max_score * 100 for a in valid) / len(valid) if valid else 0
             lines.append(f"{student.first_name} {student.last_name}: {avg:.0f}% average ({len(assessments)} assessments)")
         else:
             lines.append(f"{student.first_name} {student.last_name}: No assessments yet")
