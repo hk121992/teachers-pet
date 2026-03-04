@@ -34,6 +34,7 @@ frontend/.env.local
 # OS
 .DS_Store
 Thumbs.db
+handoff.md
 
 # Plan
 PLAN.md
